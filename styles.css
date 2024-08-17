@@ -1,0 +1,299 @@
+html {
+    scroll-behavior: smooth; /* Transiciones suaves al desplazarse entre secciones */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #000000, #2e2e2e); /* Degradado de negro a gris oscuro */
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    border-bottom: 2px solid #333333;
+    text-align: center;
+}
+
+header h1 {
+    color: #00FFFF;
+    font-size: 3em;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    margin: 0;
+}
+
+nav {
+    background: linear-gradient(90deg, #9400D3, #00FFFF);
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Quitar el brillo de las letras en la barra de navegación */
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 20px;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Efecto de levantar y ampliación sutil al pasar el cursor sobre los enlaces de la barra */
+nav a:hover {
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: none; /* Se elimina el efecto de brillo */
+}
+
+/* Animaciones sutiles para las imágenes al pasar el cursor */
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05); /* Ampliación ligera */
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+section h2 {
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+section p {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 2em;
+    margin: 0 15px;
+}
+
+.social-icons a.facebook {
+    color: #00BFFF;
+    text-shadow: 0 0 10px #00BFFF, 0 0 20px #00BFFF;
+}
+
+.social-icons a.instagram {
+    color: #BF00BF;
+    text-shadow: 0 0 10px #BF00BF, 0 0 20px #BF00BF;
+}
+
+.social-icons a.twitter {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
+}
+
+.social-icons a:hover {
+    text-shadow: 0 0 15px, 0 0 30px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    text-align: center;
+    color: #FFFFFF;
+    border-top: 2px solid #333333;
+}
+
+footer a {
+    color: #00FFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #9400D3;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #00FFFF;
+    color: #000000;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: scale(1.2);
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+nav a i {
+    display: block;
+    margin-bottom: 5px;
+    animation: iconBounce 2s infinite;
+}
+
+nav a:hover i {
+    animation-play-state: paused;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Aumenta el espacio entre las imágenes */
+    justify-content: center;
+}
+
+
+.gallery-item {
+    position: relative;
+    width: 350px; /* Aumenta el tamaño de la imagen */
+    height: 250px; /* Aumenta la altura del contenedor */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.5); /* Sombra azul neón */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+    display: block;
+}
+
+
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Ampliación ligera en hover */
+}
+
+.gallery-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-description {
+    opacity: 1; /* Muestra la descripción al pasar el mouse */
+}
+
+/* Estilos específicos para bordes y sombras */
+.gallery-item.blue-border {
+    border: 5px solid #00FFFF; /* Borde azul neón */
+    box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF; /* Efecto de resplandor azul neón */
+}
+
+.gallery-item.purple-border {
+    border: 5px solid #BF00BF; /* Borde morado neón */
+    box-shadow: 0 0 20px #BF00BF, 0 0 40px #BF00BF; /* Efecto de resplandor morado neón */
+}
+
+.gallery-item.white-border {
+    border: 5px solid #FFFFFF; /* Borde blanco neón */
+    box-shadow: 0 0 20px #FFFFFF, 0 0 40px #FFFFFF; /* Efecto de resplandor blanco neón */
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Fondo negro */
+    z-index: 9999; /* Asegura que el preloader esté sobre el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    position: relative;
+}
+
+.loader h1 {
+    font-size: 48px;
+    color: #fff;
+}
+
+.loader .light {
+    width: 50px;
+    height: 50px;
+    background-color: #6a0dad; /* Color morado neón */
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animación de pulsación */
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
+
+/* Esconder el preloader cuando la página ha cargado */
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
